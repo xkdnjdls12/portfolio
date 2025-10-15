@@ -3,216 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김민수 ♡ 박지영 결혼합니다</title>
-    
-    <!-- SEO 및 소셜 미디어 공유 최적화 -->
-    <meta name="description" content="김민수 ♡ 박지영의 결혼식을 축하해 주세요. 2024년 5월 18일 오후 2시, 서울 웨딩홀에서 만나요.">
-    <meta property="og:title" content="김민수 ♡ 박지영 결혼합니다">
-    <meta property="og:description" content="2024년 5월 18일 오후 2시, 서울 웨딩홀에서 만나요">
-    <meta property="og:image" content="./images/cover.jpg">
-    <meta property="og:url" content="https://wedding-invitation.example.com">
-    <meta property="og:type" content="website">
-    
-    <!-- 카카오톡 공유 최적화 -->
-    <meta property="og:site_name" content="웨딩 청첩장">
-    
-    <!-- 폰트 및 스타일시트 -->
+    <title>Portfolio - 개발자 포트폴리오</title>
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/main.css">
-    
-    <!-- 카카오 지도 API -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_MAP_API_KEY"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- 메인 페이지 -->
-    <div id="main-page" class="page active">
-        <!-- 커버 섹션 -->
-        <section class="cover-section">
-            <div class="cover-image">
-                <img src="./images/cover.jpg" alt="웨딩 커버 이미지" loading="eager">
-                <div class="cover-overlay">
-                    <h1 class="couple-names">김민수 ♡ 박지영</h1>
-                    <p class="wedding-date">2024년 5월 18일 토요일</p>
-                    <p class="wedding-time">오후 2시</p>
-                    <div class="d-day-counter">
-                        <span id="d-day-text">D-</span>
-                    </div>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
             </div>
-        </section>
-
-        <!-- 인사말 섹션 -->
-        <section class="greeting-section">
-            <div class="container">
-                <h2>인사말</h2>
-                <div class="greeting-content">
-                    <p>두 사람이 사랑으로 만나<br>
-                    서로 아끼고 이해하며<br>
-                    살아가고자 합니다.</p>
-                    <p>새로운 인생을 시작하는 두 사람에게<br>
-                    축복과 격려를 부탁드립니다.</p>
-                </div>
-                <div class="parents-info">
-                    <div class="groom-parents">
-                        <p class="parents-title">신랑 아버지 김○○ 어머니 이○○</p>
-                        <p class="son-name">아들 민수</p>
-                    </div>
-                    <div class="bride-parents">
-                        <p class="parents-title">신부 아버지 박○○ 어머니 정○○</p>
-                        <p class="daughter-name">딸 지영</p>
-                    </div>
-                </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-        </section>
-
-        <!-- 예식 정보 섹션 -->
-        <section class="ceremony-info-section">
-            <div class="container">
-                <h2>예식 정보</h2>
-                <div class="ceremony-details">
-                    <div class="detail-item">
-                        <h3>예식일시</h3>
-                        <p>2024년 5월 18일 토요일 오후 2시</p>
-                    </div>
-                    <div class="detail-item">
-                        <h3>예식장소</h3>
-                        <p>서울 웨딩홀 3층 그랜드홀</p>
-                        <p class="address">서울특별시 강남구 테헤란로 123</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 지도 및 길찾기 섹션 -->
-        <section class="map-section">
-            <div class="container">
-                <h2>오시는 길</h2>
-                <div id="map" class="map-container"></div>
-                <div class="navigation-buttons">
-                    <button class="nav-btn" onclick="openNavigation('kakao')">
-                        <span class="nav-icon">🗺️</span>
-                        카카오내비
-                    </button>
-                    <button class="nav-btn" onclick="openNavigation('tmap')">
-                        <span class="nav-icon">🚗</span>
-                        티맵
-                    </button>
-                    <button class="nav-btn" onclick="openNavigation('naver')">
-                        <span class="nav-icon">📍</span>
-                        네이버지도
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 연락처 섹션 -->
-        <section class="contact-section">
-            <div class="container">
-                <h2>연락처</h2>
-                <div class="contact-buttons">
-                    <button class="contact-btn" onclick="callPhone('010-1234-5678')">
-                        <span class="contact-icon">📞</span>
-                        <div class="contact-info">
-                            <span class="contact-label">신랑</span>
-                            <span class="contact-number">010-1234-5678</span>
-                        </div>
-                    </button>
-                    <button class="contact-btn" onclick="callPhone('010-9876-5432')">
-                        <span class="contact-icon">📞</span>
-                        <div class="contact-info">
-                            <span class="contact-label">신부</span>
-                            <span class="contact-number">010-9876-5432</span>
-                        </div>
-                    </button>
-                    <button class="contact-btn" onclick="callPhone('010-5555-1234')">
-                        <span class="contact-icon">📞</span>
-                        <div class="contact-info">
-                            <span class="contact-label">혼주</span>
-                            <span class="contact-number">010-5555-1234</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 갤러리 미리보기 섹션 -->
-        <section class="gallery-preview-section">
-            <div class="container">
-                <h2>갤러리</h2>
-                <div class="gallery-preview">
-                    <div class="preview-item">
-                        <img src="./images/gallery1.jpg" alt="웨딩 사진 1" loading="lazy">
-                    </div>
-                    <div class="preview-item">
-                        <img src="./images/gallery2.jpg" alt="웨딩 사진 2" loading="lazy">
-                    </div>
-                </div>
-                <button class="gallery-btn" onclick="showGallery()">
-                    더 많은 사진 보기
-                    <span class="arrow">→</span>
-                </button>
-            </div>
-        </section>
-
-        <!-- 공유 기능 -->
-        <section class="share-section">
-            <div class="container">
-                <button class="share-btn" onclick="copyUrl()">
-                    <span class="share-icon">📤</span>
-                    청첩장 공유하기
-                </button>
-            </div>
-        </section>
-    </div>
-
-    <!-- 갤러리 페이지 -->
-    <div id="gallery-page" class="page">
-        <div class="gallery-header">
-            <button class="back-btn" onclick="showMain()">
-                <span class="back-icon">←</span>
-                돌아가기
-            </button>
-            <h2>갤러리</h2>
         </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./images/gallery1.jpg" alt="웨딩 사진 1" loading="lazy">
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    안녕하세요, <span class="highlight">개발자</span>입니다
+                </h1>
+                <p class="hero-subtitle">
+                    창의적이고 효율적인 솔루션을 통해 사용자 경험을 개선하는 것을 목표로 합니다.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+                    <a href="#contact" class="btn btn-secondary">연락하기</a>
                 </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery2.jpg" alt="웨딩 사진 2" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery3.jpg" alt="웨딩 사진 3" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery4.jpg" alt="웨딩 사진 4" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery5.jpg" alt="웨딩 사진 5" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery6.jpg" alt="웨딩 사진 6" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery7.jpg" alt="웨딩 사진 7" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./images/gallery8.jpg" alt="웨딩 사진 8" loading="lazy">
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- 로딩 스피너 -->
-    <div id="loading-spinner" class="loading-spinner">
-        <div class="spinner"></div>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>개발자로서의 여정</h3>
+                    <p>
+                        사용자 중심의 웹 애플리케이션 개발에 열정을 가지고 있으며, 
+                        최신 기술 트렌드를 학습하고 적용하는 것을 즐깁니다. 
+                        깔끔하고 효율적인 코드 작성을 추구하며, 
+                        팀워크를 중시하는 개발자입니다.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>2+</h4>
+                            <p>년 경력</p>
+                        </div>
+                        <div class="stat">
+                            <h4>10+</h4>
+                            <p>완료 프로젝트</p>
+                        </div>
+                        <div class="stat">
+                            <h4>5+</h4>
+                            <p>기술 스택</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="./scripts/main.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-commerce Platform</h3>
+                        <p>React와 Node.js를 활용한 풀스택 쇼핑몰 플랫폼</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>팀 협업을 위한 실시간 작업 관리 애플리케이션</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Socket.io</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>실시간 데이터 분석 및 시각화 대시보드</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-vue"></i>
+                            <span>Vue.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Express</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Tools & Others</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>연락처 정보</h3>
+                    <p>프로젝트 협업이나 채용 문의가 있으시면 언제든 연락해 주세요!</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>your.email@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+82 10-1234-5678</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Seoul, South Korea</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="이름" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="이메일" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="제목" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="메시지" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">메시지 보내기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
